@@ -6,7 +6,7 @@
 #    By: flevesqu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 21:08:02 by flevesqu          #+#    #+#              #
-#    Updated: 2016/02/17 17:45:01 by gvilmont         ###   ########.fr        #
+#    Updated: 2016/03/14 17:50:59 by gvilmont         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = ./includes/
+INCLUDES = ./includes/libft.h
 SRC = ft_atoi.c\
 	  ft_bzero.c\
 	  ft_isalnum.c\
@@ -23,6 +23,7 @@ SRC = ft_atoi.c\
 	  ft_isdigit.c\
 	  ft_isprint.c\
 	  ft_itoa.c\
+	  ft_joinfree.c\
 	  ft_memalloc.c\
 	  ft_memccpy.c\
 	  ft_memchr.c\
