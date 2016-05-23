@@ -6,7 +6,7 @@
 /*   By: gvilmont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:41:13 by gvilmont          #+#    #+#             */
-/*   Updated: 2016/05/23 18:14:59 by gvilmont         ###   ########.fr       */
+/*   Updated: 2016/05/23 18:17:35 by gvilmont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,23 +59,23 @@ static void		ft_initline(char **line)
 static int		ft_read(int const fd, char **line)
 {
 	int			ret;
-	static char	buff[NBR_FD][BUFF_SIZE + 1];
+	static char	buff[BUFF_SIZE + 1];
 
-	if (ft_strlen(buff[fd]) == 0)
+	if (ft_strlen(buff) == 0)
 	{
-		ret = read(fd, buff[fd], BUFF_SIZE);
-		buff[fd][ret] = '\0';
+		ret = read(fd, buff, BUFF_SIZE);
+		buff[ret] = '\0';
 		if (ret == 0 || ret == -1)
 			return (ret);
 	}
-	if (ft_occur(buff[fd], '\n') == -1)
+	if (ft_occur(buff, '\n') == -1)
 	{
-		line[0] = ft_joinfree(line[0], buff[fd], 1);
-		ft_bzero(buff[fd], BUFF_SIZE);
+		line[0] = ft_joinfree(line[0], buff, 1);
+		ft_bzero(buff, BUFF_SIZE);
 		ft_read(fd, line);
 	}
 	else
-		lastjoin(buff[fd], line);
+		lastjoin(buff, line);
 	return (1);
 }
 
@@ -86,7 +86,7 @@ int				get_next_line(int const fd, char **line)
 	ret = -1;
 	if (line == NULL)
 		return (ret);
-	if (fd >= 0 && fd < NBR_FD)
+	if (fd >= 0)
 	{
 		ft_initline(line);
 		ret = ft_read(fd, line);

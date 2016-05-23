@@ -6,7 +6,7 @@
 /*   By: gvilmont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/17 17:33:48 by gvilmont          #+#    #+#             */
-/*   Updated: 2016/03/14 17:20:50 by gvilmont         ###   ########.fr       */
+/*   Updated: 2016/05/23 18:18:08 by gvilmont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <fcntl.h>
 # define BUFF_SIZE 5
-# define NBR_FD 100
 
 int	get_next_line(int const fd, char **line);
 
