@@ -6,12 +6,11 @@
 /*   By: gvilmont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:41:13 by gvilmont          #+#    #+#             */
-/*   Updated: 2016/03/14 18:27:27 by gvilmont         ###   ########.fr       */
+/*   Updated: 2016/05/23 18:14:59 by gvilmont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 static int		ft_occur(char *str, char s)
 {
